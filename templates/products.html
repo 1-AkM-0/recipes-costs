@@ -11,12 +11,22 @@
                 <td>Nome</td>
                 <td>Categoria</td>
                 <td>Volume Bruto</td>
-                <td>Uni. Mediada</td>
+                <td>Uni. Medida</td>
                 <td>Custo med.</td>
                 <td>Custo unit.</td>
             </tr>
         </thead>
         <tbody>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.nome }}</td>
+                <td>{{ product.categoria }}</td>
+                <td>{{ product.volume_bruto }}</td>
+                <td>{{ product.un_medida }}</td>
+                <td>{{ product.custo_medio }}</td>
+                <td>{{ product.custo_un| round(2) }}</td>
+            </tr>
+            {% endfor %}
             <tr>
                 <form action="/products" method="POST">
                     <td>
